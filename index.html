@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Senior Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus+Jakarta+Sans', sans-serif; background-color: #030303; color: #ffffff; overflow-x: hidden; }
+        .bg-modern-grid { 
+            background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px); 
+            background-size: 50px 50px; background-attachment: fixed; animation: gridMove 20s linear infinite; 
+        }
+        @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 50px 50px; } }
+        .vignette-overlay { pointer-events: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%); z-index: 1; }
+        
+        /* OUTLINE GLOW CREATIVE */
+        .creative-text span { display: inline-block; color: transparent; -webkit-text-stroke: 2px rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .red-gradient { background: linear-gradient(135deg, #ff0000 0%, #990000 100%); }
+        .nav-link:hover { color: #ff0000; text-shadow: 0 0 15px rgba(255, 0, 0, 0.8); }
+        .tech-badge { background: rgba(255, 0, 0, 0.1); padding: 4px 12px; font-size: 10px; border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 2px; text-transform: uppercase; letter-spacing: 1px; color: #ff0000; }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff0000; }
+    </style>
+</head>
+<body class="bg-modern-grid relative">
+
+    <div class="vignette-overlay"></div>
+
+    <header class="fixed top-0 w-full z-50 flex justify-center py-8 pointer-events-none">
+        <nav class="pointer-events-auto flex gap-4 sm:gap-8 text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold text-gray-400 bg-black/60 backdrop-blur-md px-8 py-4 rounded-full border border-white/5 shadow-2xl">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">Philosophy</a>
+            <a href="#services" class="nav-link">Expertise</a>
+            <a href="#portfolio" class="nav-link">Work</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main id="home" class="relative min-h-screen flex items-center justify-between px-10 lg:px-24 overflow-hidden border-b border-red-900/10 z-10">
+        <h2 class="creative-text absolute top-1/2 left-0 -translate-y-1/2 text-[9rem] sm:text-[16rem] font-black select-none z-0 pointer-events-none flex tracking-tighter">
+            <span>C</span><span>R</span><span>E</span><span>A</span><span>T</span><span>I</span><span>V</span><span>E</span>
+        </h2>
+        <div class="w-full lg:w-1/2 z-10 pt-20 lg:pt-0">
+            <p class="text-[#ff0000] font-bold tracking-[0.5em] text-sm mb-4 reveal uppercase">Engineering Future Systems</p>
+            <div class="h-24 sm:h-32 flex items-center">
+                <h1 id="changing-text" class="text-5xl sm:text-8xl font-extrabold uppercase leading-none tracking-tighter">Muhammad Nayaka ALfino</h1>
+            </div>
+            <p class="text-gray-400 mt-8 max-w-lg leading-relaxed reveal-delay text-lg">
+                Spesialis dalam membangun <span class="text-white">High-Performance Web Applications</span>. Saya tidak hanya menulis kode, saya mendesain solusi yang skalabel untuk masa depan digital.
+            </p>
+        </div>
+        <div class="hidden lg:flex w-1/2 justify-end items-center z-10 relative">
+            <div class="absolute w-[400px] h-[500px] bg-[#ff0000] opacity-20 blur-[120px] animate-pulse"></div>
+            <div id="profile-card" class="relative group border border-red-500/30 overflow-hidden shadow-2xl">
+                <img src="5.jpg" alt="Profile" class="w-[350px] h-[500px] object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+            </div>
+        </div>
+    </main>
+
+    <section id="about" class="min-h-screen flex items-center px-10 lg:px-24 py-32 z-10 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="section-anim">
+                <p class="text-[#ff0000] font-bold tracking-[0.5em] text-xs mb-4 uppercase">Question</p>
+                <h2 class="text-5xl sm:text-7xl font-black uppercase mb-10 leading-none">How <br><span class="text-stroke" style="-webkit-text-stroke: 1px white; color: transparent;"> did you get your first 5 million??</span></h2>
+                <div class="space-y-8 text-gray-300 text-lg leading-relaxed">
+                    <p class="text-justify text-xl font-light">
+                         Pertama, saya dibayar karna menukar waktu saya. Kedua, saya dibayar karena skill dan ilmu pengetahuan saya. Ketiga kamu dibayar karena valuemu saya.
+                    </p>
+                    <div class="p-8 border-l-4 border-[#ff0000] bg-white/5 backdrop-blur-md">
+                        <p class="text-white font-bold text-2xl italic mb-4">CARANYA</p>
+                        <p class="text-sm text-gray-400 uppercase tracking-widest">saya menghabiskan waktu saya dengan berjualan sebuah website dengan harga yang cukup murah, dan ketika website saya sudah terjual saya memakainya untuk melakukan sebuah trading dengan akun ibu saya dengan begitu saya bisa mendapatkan 5 juta pertama dalam hidup saya.</p>
+                    </div>
+                    <p class="text-justify">
+                        "saya jarang mengeluarkan duit saya untuk membeli pakaian atau makan makanan diluar. saya biasanya memakai duit itu untuk membeli sebuah laptop baru dan mengupgrade pc saya."
+                    </p>
+                </div>
+            </div>
+            <div class="section-anim delay-200">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="h-80 border border-white/10 overflow-hidden group">
+                            <img src="4.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-110" alt="Work">
+                        </div>
+                        <div class="p-6 bg-red-600/10 border border-red-600/20 text-center">
+                            <h4 class="text-4xl font-black text-red-600">01</h4>
+                            <p class="text-[10px] uppercase tracking-widest">Website</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-12">
+                        <div class="p-6 bg-white/5 border border-white/10 text-center">
+                            <h4 class="text-4xl font-black text-white">2</h4>
+                            <p class="text-[10px] uppercase tracking-widest">Trading</p>
+                        </div>
+                        <div class="h-80 border border-white/10 overflow-hidden group">
+                            <img src="6.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-110" alt="Dev">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="min-h-screen px-10 lg:px-24 py-32 z-10 border-t border-white/5">
+        <div class="text-center mb-24 section-anim">
+            <h2 class="text-6xl font-black uppercase">Technical Expertise</h2>
+            <p class="text-gray-500 mt-4 tracking-[0.2em]">Keahlian yang saya asah melalui ribuan jam implementasi nyata.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group section-anim">
+                <div class="mb-8 overflow-hidden h-56 border border-white/10 relative">
+                    <img src="1.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="UI">
+                    <div class="absolute inset-0 bg-red-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+                <h3 class="text-2xl font-black text-red-600 mb-4 uppercase">First Code Portfolio i Build</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">ini mungkin code pertama ku dalam membuat sebuah website tentang Portfolio ini code dibilang masih sangatla kaku dan bahkan animasi scrol yang masih sangat kaku.</p>
+                <ul class="text-xs space-y-2 text-gray-500 font-mono">
+                    <li> - sampah jelek.</li>
+                    <li> + First Website Portfolio.</li>
+                    <li> - Sangatlah Kaku.</li>
+                </ul>
+            </div>
+            <div class="group section-anim delay-100">
+                <div class="mb-8 overflow-hidden h-56 border border-white/10 relative">
+                    <img src="3.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Backend">
+                </div>
+                <h3 class="text-2xl font-black text-red-600 mb-4 uppercase">Secondary Website</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">Di website kedua ini saya sudah sedikit mahir dalam mengerjakan efek animasi yang masih tergolong smooth dan tidak kaku seperti sebelummnya, dan ini Portfolio yang saya sukai dari dulu karna efek animasi yang dibilang smooth.</p>
+                <ul class="text-xs space-y-2 text-gray-500 font-mono">
+                    <li>+ codingan rapi.</li>
+                    <li>+ animasi smooth.</li>
+                    <li>+ penataan tempat dan border penjelasan.</li>
+                </ul>
+            </div>
+            <div class="group section-anim delay-200">
+                <div class="mb-8 overflow-hidden h-56 border border-white/10 relative">
+                    <img src="8.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Cloud">
+                </div>
+                <h3 class="text-2xl font-black text-red-600 mb-4 uppercase">Third website</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">ini adalah proyek yang saya bikin sejak 5 hari yang lalu, dengan efek yang sangat smooth dan tata letak profile, dan kata yang tepat dan rapi, dan pastinya dengan codingan yang sangat sangat rapi.</p>
+                <ul class="text-xs space-y-2 text-gray-500 font-mono">
+                    <li>+++ animasi yang sangat sangat smooth.</li>
+                    <li>+++ penataan yang sangat rapi.</li>
+                    <li>++ penjelasan yang sangat jelas.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="min-h-screen px-10 lg:px-24 py-32 z-10 relative">
+        <div class="mb-32 section-anim">
+            <h2 class="text-6xl font-black uppercase mb-4 leading-none">University <br><span class="text-red-600">Dream</span></h2>
+            <p class="text-gray-500 tracking-[0.4em] uppercase text-xs">There are 3 universities namely <p>
+        </div>
+        <div class="grid grid-cols-1 gap-48">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start section-anim">
+                <div class="sticky top-32 space-y-8">
+                    <div class="flex gap-3"><span class="tech-badge">ITS</span><span class="tech-badge">UGM</span></div>
+                    <h3 class="text-5xl font-black uppercase text-white leading-tight">Why this university?</h3>
+                    <p class="text-gray-400 text-lg text-justify leading-relaxed">
+                        Saya memilih ITB, UGM, dan ITS karena ketiganya adalah pilar utama pendidikan teknologi di Indonesia dengan standar internasional. Bagi saya, menjadi seorang Fullstack Developer bukan sekadar bisa coding, tapi tentang memiliki fundamental yang kuat, jejaring yang luas, dan etos kerja yang tinggi. Ketiga universitas ini menjamin kualitas tersebut, sehingga di mana pun saya diterima, saya berada di jalur yang tepat untuk mencapai target profesional saya.
+                    </p>
+                    <div class="space-y-4">
+                        <h5 class="text-red-600 font-bold uppercase tracking-widest text-sm">Key Achievements:</h5>
+                        <ul class="text-gray-500 space-y-2 text-sm">
+                            <li>- Menawarkan tekanan akademik tinggi yang melatih ketahanan mental.</li>
+                            <li>- Menawarkan jaringan yang sangat luas untuk peluang proyek sampingan (freelance) atau karier korporat..</li>
+                            <li>- Membuktikan bahwa kamu memiliki logika pemrograman yang sudah teruji secara nasional..</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space-y-10">
+                    <div class="overflow-hidden border border-white/5 shadow-2xl group">
+                        <img src="ITS.jpg" class="w-full h-[600px] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" alt="Main">
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <img src="ITB.jpg" class="w-full h-48 object-cover opacity-50 hover:opacity-100 transition-opacity" alt="Sub1">
+                        <img src="UGM.jfif" class="w-full h-48 object-cover opacity-50 hover:opacity-100 transition-opacity" alt="Sub2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="min-h-screen flex items-center justify-center px-10 lg:px-24 py-20 z-10 relative">
+        <div class="text-center w-full max-w-5xl section-anim">
+            <h2 class="text-7xl sm:text-9xl font-black uppercase mb-16 leading-none">need a website? <br><span class="text-red-600">Contact Me</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 text-left items-center">
+                <div class="space-y-10">
+                    <p class="text-gray-400 text-xl leading-relaxed">Butuh sebuah Website yang murah?, cukup hubungi saya dan tunggu balasan saya saya akan mengerjakan websitemu.</p>
+                    <div class="space-y-4">
+                        <p class="text-red-600 font-bold tracking-[0.2em]">DIRECT EMAIL:</p>
+                        <p class="text-3xl font-black hover:text-red-600 transition-colors">xenaww01@gmail.com</p>
+                    </div>
+                </div>
+                <form class="space-y-8 bg-white/5 p-10 backdrop-blur-md border border-white/10">
+                    <input type="text" placeholder="YOUR FULL NAME" class="w-full bg-transparent border-b border-gray-700 py-4 focus:border-red-600 focus:outline-none transition-all uppercase font-bold text-xs tracking-widest">
+                    <input type="email" placeholder="YOUR EMAIL ADDRESS" class="w-full bg-transparent border-b border-gray-700 py-4 focus:border-red-600 focus:outline-none transition-all uppercase font-bold text-xs tracking-widest">
+                    <textarea rows="3" placeholder="YOUR MESSAGE / PROJECT BRIEF" class="w-full bg-transparent border-b border-gray-700 py-4 focus:border-red-600 focus:outline-none transition-all resize-none uppercase font-bold text-xs tracking-widest"></textarea>
+                    <button class="w-full py-6 red-gradient text-white font-black uppercase tracking-[0.4em] shadow-2xl hover:scale-[1.02] transition-transform">Initiate Sequence</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center border-t border-white/5 bg-black/40 backdrop-blur-sm z-20 relative">
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">Muhammad Nayaka Alfino Website.</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ANIMASI OUTLINE GLOW CREATIVE (PINGGIRAN SAJA)
+        const creativeLetters = document.querySelectorAll(".creative-text span");
+        const creativeTL = gsap.timeline({ repeat: -1 });
+        creativeTL.to(creativeLetters, { webkitTextStroke: "2px rgba(255, 255, 255, 1)", filter: "drop-shadow(0 0 10px rgba(255, 255, 255, 0.8))", duration: 0.1, stagger: 0.1 })
+                  .to(creativeLetters, { webkitTextStroke: "2px rgba(255, 0, 0, 1)", filter: "drop-shadow(0 0 25px rgba(255, 0, 0, 1))", duration: 0.6 })
+                  .to(creativeLetters, { webkitTextStroke: "2px rgba(255, 255, 255, 0.08)", filter: "drop-shadow(0 0 0px rgba(0,0,0,0))", duration: 1, delay: 1.5 });
+
+        // NAMA CHANGING
+        const words = ["Muhammad Nayaka Alfino", "FULLSTACK DEVELOPER"];
+        let currentIndex = 0;
+        const textElement = document.getElementById("changing-text");
+        function changeText() {
+            gsap.to(textElement, { y: -30, opacity: 0, duration: 0.5, onComplete: () => {
+                currentIndex = (currentIndex + 1) % words.length;
+                textElement.innerText = words[currentIndex];
+                textElement.style.color = (currentIndex === 1) ? "#ff0000" : "#ffffff";
+                gsap.fromTo(textElement, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 });
+            }});
+        }
+        setInterval(changeText, 3500);
+
+        // SCROLL REVEAL
+        const sections = gsap.utils.toArray('.section-anim');
+        sections.forEach(elem => {
+            gsap.fromTo(elem, { y: 80, opacity: 0 }, {
+                y: 0, opacity: 1, duration: 1.2, ease: "power3.out",
+                scrollTrigger: { trigger: elem, start: "top 85%", toggleActions: "play none none none" }
+            })
+        });
+
+        window.addEventListener('load', () => {
+            // Menambahkan animasi masuk untuk foto profil di hero
+            gsap.from("#profile-card", { x: 100, opacity: 0, duration: 1.5, ease: "expo.out", delay: 0.5 });
+            gsap.from(".reveal", { x: -30, opacity: 0, duration: 1 });
+            gsap.from(".reveal-delay", { opacity: 0, y: 20, duration: 1, delay: 0.5 });
+        });
+    </script>
+</body>
+</html>
